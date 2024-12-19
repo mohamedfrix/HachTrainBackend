@@ -5,8 +5,6 @@ import json
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/api/*": {"origins": "*"}})  # Allow all origins for all /api routes
-
 @app.route('/api/leaderboard', methods=['GET'])
 def leaderboard():
     leaderboard = LeaderBoard()
