@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request
+from flask_cors import cross_origin
+
 from leaderboard import LeaderBoard
 import json
 
@@ -12,6 +14,7 @@ def home():
     return "Hello, Flask!"
 
 @app.route('/api/leaderboard', methods=['GET'])
+@cross_origin()
 def leaderboard():
     leaderboard = LeaderBoard()
     competition_name = request.args['competition_name']
