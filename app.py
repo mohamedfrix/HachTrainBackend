@@ -4,6 +4,9 @@ import json
 
 app = Flask(__name__)
 
+from flask_cors import CORS
+CORS(app)  # Allow all origins
+
 @app.route('/')
 def home():
     return "Hello, Flask!"
